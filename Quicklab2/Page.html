@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="div1">
+
+
+    </div>
+
+    <div id="div2">
+
+
+    </div>
+
+
+    <script>
+
+        const url = "https://api.artic.edu/api/v1/artworks";
+        fetch(url)
+        .then((resultat)=>resultat.json())
+        .then(data=>{
+
+
+
+            document.write("--------------Artist names---------------");
+
+            for(i = 0; i<data.data.length ; i++){
+                document.write("<br>" + `${data.data[i].artist_title}` + "<br>");
+
+                
+            }
+            console.log(data);
+            console.log(data.data[0]);
+            console.log(data.data[0].title);
+            console.log(data.data[0].artist_title);
+            console.log(data.data[0].department_title);
+
+        })
+
+        
+
+
+    </script>
+</body>
+</html>
